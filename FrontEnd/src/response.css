@@ -1,0 +1,134 @@
+.rn-container {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.rn-box {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Success and Error Icon Containers */
+.rn-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.rn-icon-success {
+  background-color: #22c55e;
+}
+
+.rn-icon-error {
+  background-color: #ef4444;
+}
+
+.rn-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+/* Titles and Text */
+.rn-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.rn-message {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 16px;
+}
+
+/* Buttons */
+.rn-button {
+  padding: 10px 20px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rn-button-success {
+  background-color: #22c55e;
+}
+
+.rn-button-success:hover {
+  background-color: #16a34a;
+}
+
+.rn-button-error {
+  background-color: #ef4444;
+}
+
+.rn-button-error:hover {
+  background-color: #dc2626;
+}
+
+/* Loading State */
+.rn-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rn-loader {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #ddd;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: rn-spin 1s linear infinite;
+}
+
+@keyframes rn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+    height: 15px;
+    width: 200px;
+    border-radius: 10px;
+    --c: no-repeat linear-gradient(#6100ee 0 0);
+    background: var(--c), var(--c), #d7b8fc;
+    background-size: 60% 100%;
+    animation: l16 3s infinite;
+}
+
+@keyframes l16 {
+    0% {
+        background-position: -150% 0, -150% 0
+    }
+
+    66% {
+        background-position: 250% 0, -150% 0
+    }
+
+    100% {
+        background-position: 250% 0, 250% 0
+    }
+}

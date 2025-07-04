@@ -1,0 +1,687 @@
+/* @import "tailwindcss"; */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-color: black; */
+    /* color: white; */
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #e4eff0;
+    /* Match your page's background */
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    color: #ffffff;
+}
+
+.alert-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+
+}
+
+.alert-box {
+    position: absolute;
+    z-index: 10;
+    /* top: 80px; */
+    padding: 0 20px;
+    transition: top 0.4s ease-in-out;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    h3 {
+        color: white;
+    }
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: rgb(6, 38, 48);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    justify-content: space-between;
+    border-bottom: 5px solid rgb(8, 151, 180);
+    box-sizing: border-box;
+    position: relative;
+
+    .nav-btns {
+        /* background-color: red; */
+        display: flex;
+        gap: 20px;
+        list-style: none;
+
+        li {
+            background-color: rgb(19, 83, 152);
+            padding: 5px 10px;
+            margin: auto 0;
+            height: 20px;
+            border-radius: 20px;
+            /* border: 1px solid black; */
+
+            .link {
+                color: white;
+
+                text-decoration: none;
+            }
+
+            &:hover {
+                background-color: rgb(239, 99, 11);
+            }
+        }
+    }
+
+    .accsess-btn {
+        display: flex;
+        gap: 20px;
+
+        button {
+            cursor: pointer;
+            /* font-weight: bold; */
+            font-size: 17px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+            /* color: white; */
+
+            &:hover {
+                background-color: red;
+            }
+        }
+
+        .login-btn {
+            background-color: orange;
+        }
+
+    }
+
+    .dropdown-btn {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        gap: 10px;
+
+        /* background-color: red; */
+        .logo-name {
+            height: 30px;
+            /* background-color: red; */
+            color: rgb(129, 199, 9);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .logo {
+            /* width: 100px; */
+            height: 30px;
+
+            /* background-color: red; */
+            img {
+                /* border-radius: 50%; */
+                width: 30px;
+            }
+        }
+
+        .menu {
+            display: none;
+            height: 35px;
+
+            /* background-color: red; */
+            img {
+                border-radius: 50%;
+                width: 40px;
+            }
+        }
+    }
+
+    .dropdown {
+        position: absolute;
+        /* left: -150px; */
+        top: 65px;
+        height: 200px;
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+        gap: 10px;
+        background-color: white;
+        z-index: 10;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition: left 0.4s ease, opacity 0.5s ease;
+
+        .link {
+            text-decoration: none;
+        }
+
+        .dropdown-logo {
+            img {
+                /* border: 1px solid black; */
+                box-shadow: 0px 0px 3px black;
+                width: 40px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+/* OUTLET FOR APP.JSX */
+.outlet-container {
+    /* background-color: red; */
+    background-color: rgb(229, 239, 240);
+    min-height: 91vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* color: white; */
+    position: relative;
+}
+
+.outlet-container #bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+/* Welcome-conatiner for logout User */
+.welcome-box {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 70vw;
+    height: 200px;
+    background-color: rgb(19, 77, 115);
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgb(2, 2, 45);
+
+    .blog-text {
+        display: inline;
+        color: rgb(17, 255, 0);
+    }
+
+    .get-started {
+        cursor: pointer;
+        padding: 10px 30px;
+        font-size: 20px;
+        border-radius: 30px;
+        border: 2px solid black;
+        background-color: rgb(214, 223, 50);
+    }
+}
+
+/* HOME.jsx */
+.home-default-cards-container {
+
+    min-height: 660px;
+    width: 100%;
+    /* background-color: rgb(19, 69, 56); */
+    background-color: rgb(246, 249, 250);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 30px;
+    color: black;
+    box-sizing: border-box;
+
+    .left-card,
+    .top-card,
+    .bottom-card {
+        position: relative;
+        box-shadow: 0px 0px 5px black;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: absolute;
+            bottom: 0;
+            z-index: 10;
+            padding: 20px;
+
+
+            button {
+                width: 70px;
+                font-size: 15px;
+                color: black;
+                padding: 3px 2px;
+                background-color: yellow;
+                border-radius: 8px;
+                border: 1px solid black;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: orange;
+                }
+            }
+
+        }
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            opacity: 0.80;
+        }
+    }
+
+    .left-card {
+        border-radius: 5px;
+        width: 700px;
+        height: 550px;
+        background-color: rgb(54, 86, 98);
+    }
+
+    .right-card {
+
+        width: 500px;
+        height: 550px;
+        /* background-color: green; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+        .top-card,
+        .bottom-card {
+            border-radius: 5px;
+            width: 100%;
+            height: 270px;
+            background-color: gray;
+        }
+    }
+
+
+}
+
+/* LINE.jsx */
+.line {
+    width: 90vw;
+    height: 2px;
+    margin: 0 auto;
+    background-color: rgb(6, 38, 48);
+}
+
+/* CARD CONTAINER FOR LOGIN USER CARD.JSX */
+.card-container {
+    width: 100%;
+    min-height: 91vh;
+    /* background-color: rgb(11, 18, 26); */
+    background-color: rgb(232, 238, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: auto;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    gap: 25px;
+
+    .card {
+
+
+        /* for mobail view */
+        /* flex-direction: column; */
+        /* height: 450px; */
+
+        width: 400px;
+        /* height: 450px; */
+        padding: 15px;
+        box-sizing: border-box;
+        box-sizing: border-box;
+        /* background-color: rgb(22, 47, 56); */
+        background-color: white;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 2px rgb(18, 18, 18);
+        transition: transform 0.2s;
+
+
+        .card-info {
+            /* width: 200px; */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0;
+            height: 220px;
+            /* background-color: red; */
+            gap: 5px;
+        }
+
+        &:hover {
+            transform: scale(1.01);
+        }
+
+        .card-img-box {
+            width: 370px;
+            height: 250px;
+
+            img {
+                border-radius: 10px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+            border-radius: 5px;
+            background-color: rgb(191, 224, 40);
+            border: 1px solid black;
+            padding: 5px 20px;
+            font-size: 15px;
+            box-shadow: 0px 0px 2px black;
+
+            &:active {
+                background-color: rgb(49, 67, 73);
+            }
+        }
+
+
+    }
+}
+
+/* BLOG CONTAINER FOR BLOG.JSX */
+.blog-page-container {
+    min-height: 660px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(177, 184, 185);
+}
+
+.blog-container {
+    width: 70%;
+    min-height: 85vh;
+    margin: 10px;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    gap: 20px;
+    position: relative;
+
+    .blog-img {
+        width: 80%;
+        height: 400px;
+        border-radius: 20px;
+        /* background-color: rgb(16, 45, 60); */
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 1px solid black;
+            box-shadow: 0px 0px 10px black;
+
+        }
+    }
+
+    .dangerouslySetInnerHtml-blog-text {
+        padding: 30px;
+
+        table {
+            background-color: black;
+        }
+    }
+
+    .modify-btns {
+        /* background-color: blue; */
+        top: 20px;
+        right: -20px;
+        position: absolute;
+
+        .edit-btn {
+            border: 1.5px solid black;
+            border-radius: 10px;
+            margin: 5px;
+            background-color: rgb(230, 123, 9);
+            padding: 5px;
+            color: black;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.spinner-container {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    gap: 10px;
+    /* background-color: red;/ */
+    backdrop-filter: blur(8px);
+
+    .spinner {
+        margin-top: 20%;
+        border-radius: 50%;
+        z-index: 10;
+        border: 5px solid black;
+        border-top-color: rgb(255, 38, 0);
+        width: 100px;
+        height: 100px;
+        animation: spin 1s linear infinite;
+    }
+
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ADDBLOG  CONTAINER ADDBLOG.JSX*/
+.addblog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.form-container {
+    /* width:80vw ; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 85vh;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+
+    .form {
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+
+
+        .title,
+        .post-img {
+            border: 1px solid black;
+            background-color: rgb(227, 232, 234);
+            border-radius: 5px;
+            font-size: 15px;
+            width: 300px;
+            padding: 10px 30px 10px 10px;
+        }
+
+        .add-blog-space {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .post-img {
+            color: black;
+        }
+
+        .RTE-editor {
+            min-width: 60vw;
+            border: 1px solid black;
+            border-radius: 10px;
+
+        }
+
+        .summary {
+            border: 1px solid black;
+            background-color: rgb(233, 238, 240);
+            border-radius: 5px;
+            font-size: 15px;
+            max-width: 500px;
+            max-height: 80px;
+            height: 80px;
+            padding: 10px 30px 10px 10px;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .btns {
+
+            display: flex;
+            gap: 20px;
+        }
+
+        #sub {
+            background-color: rgba(238, 156, 15, 0.88);
+        }
+
+        button {
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px 10px;
+
+            &:active {
+                background-color: rgba(238, 100, 15, 0.88);
+            }
+        }
+    }
+}
+
+/* ABOUT.JSX */
+.about-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 91vh;
+}
+
+/* FOOTER */
+footer {
+    background-color: rgb(6, 38, 48);
+    text-align: center;
+    padding: 15px 0;
+    color: white;
+}
+
+/* Responsivness */
+
+@media (max-width:1281px) {
+    .home-default-cards-container {
+
+        .left-card,
+        .right-card {
+            width: 80vw;
+        }
+    }
+}
+
+@media (max-width:730px) {
+    .navbar {
+        .dropdown-btn {
+            .logo-name {
+                height: 25px;
+            }
+
+            .menu {
+                display: block;
+            }
+        }
+
+        .nav-btns {
+            display: none;
+        }
+    }
+}
+
+@media (max-width:470px) {
+    .card-container {
+        .card {
+            width: 330px;
+            height: 460px;
+
+            .card-img-box {
+                width: 300px;
+                height: 200px;
+            }
+
+            .card-info {
+                h2 {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .home-default-cards-container {
+        .left-card {
+            height: 400px;
+        }
+
+        .right-card {
+            height: 620px;
+
+            .top-card,
+            .bottom-card {
+                height: 300px;
+            }
+        }
+    }
+
+}
