@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import api from '../utils/api'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Edit3, Trash2, Calendar, User, ArrowLeft } from 'lucide-react';
@@ -42,7 +43,7 @@ const Blog = () => {
     if (blog && !isDeleting) {
       setIsDeleting(true);
 
-      axios.post('/api/deleteblog', { id: blog._id })
+      api.post('/api/deleteblog', { id: blog._id })
         .then((res) => {
           if (res.data.blog) {
             setTimeout(() => {

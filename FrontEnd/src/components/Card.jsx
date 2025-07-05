@@ -2,6 +2,7 @@ import React, { useEffect, useState,useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
+import api from '../utils/api'
 
 
 function Card(props) {

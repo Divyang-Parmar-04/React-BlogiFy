@@ -7,6 +7,7 @@ import { config } from "../env/config"
 import RTE from "../components/RTE"
 import { useParams } from 'react-router-dom'
 import ResponseNotification from './ResponseNotification'
+import api from '../utils/api'
 
 function EditBlog() {
   //Alert Function 
@@ -99,7 +100,7 @@ function EditBlog() {
       }
       // console.log(blog)
 
-      axios.post("/api/updateblog", blog)
+      api.post("/api/updateblog", blog)
         .then((res) => {
           if (res.data.blog) {
             // alert("Blog is updated successfully")

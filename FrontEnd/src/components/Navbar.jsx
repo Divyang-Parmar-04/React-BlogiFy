@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { useSelector } from 'react-redux'
+import api from '../utils/api'
+
 import { useAuth0 } from "@auth0/auth0-react"
 function Navbar() {
 
@@ -37,7 +39,6 @@ function Navbar() {
           </div>
 
           <Link to="/" className='link' onClick={closeDropdown}>Home</Link>
-          <Link to = '/about' className='link' onClick={closeDropdown}>About</Link>
 
           {isAuthenticated && (
             <>
@@ -49,7 +50,6 @@ function Navbar() {
         </div>
         <div className='nav-btns'>
           <li><Link to="/" className='link'>Home</Link></li>
-          <li><Link to="/about" className='link'>About</Link></li>
           {isAuthenticated && (
             <>
               <li><Link to="/createblog" className='link'>Create Blog</Link></li>

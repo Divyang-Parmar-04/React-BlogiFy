@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import { useAuth0 } from '@auth0/auth0-react'
 import { useSelector } from 'react-redux'
+import api from '../utils/api'
 
 function MyBlog() {
 

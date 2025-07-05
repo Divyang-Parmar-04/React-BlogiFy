@@ -1,4 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react'
+import api from '../utils/api'
 import axios from 'axios'
 import React, { useState, useRef,useEffect } from 'react'
 import { useDispatch } from 'react-redux'
@@ -83,7 +84,7 @@ function AddBlog() {
       }
       console.log(blog)
 
-      axios.post("/api/createblog", blog)
+      api.post("/api/createblog", blog)
         .then((res) => {
           if (res.data.blog) {
             // setLoader('none')

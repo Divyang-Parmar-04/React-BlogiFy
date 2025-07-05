@@ -6,18 +6,19 @@ import { Outlet } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { useAuth0 } from "@auth0/auth0-react"
 import axios from "axios"
+import api from "./utils/api"
 import {setData } from "./features/authSlice"
 
 
 function App() {
-
+  
   const { user, isAuthenticated} = useAuth0()
 
   const dispatch = useDispatch()
   
   useEffect(() => {
     if (isAuthenticated && user) {
-      axios.get("/api/auth/getblogs")
+      api.get("/api/auth/getblogs")
         .then((res) => {
           // console.log(res, "response ")
           const data = res.data.blogs
