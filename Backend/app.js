@@ -10,7 +10,7 @@ const app = express()
 dotenv.config()
 const PORT = process.env.PORT || 5000;
 
-const URL = `mongodb+srv://${process.env.CLUSTER_NAME}:${process.env.CLUSTER_PASSWORD}@blogify-cluster.bok96uh.mongodb.net/blogifyDB?retryWrites=true&w=majority&appName=Blogify-cluster`
+const URL = `mongodb+srv://${process.env.CLUSTER_NAME}:${process.env.CLUSTER_PASSWORD}@blogify-cluster.1orpljv.mongodb.net/BlogiFyDB?retryWrites=true&w=majority&appName=Blogify-cluster`
 
 mongoose.connect(URL)
 .then(()=>console.log("mongodb is connected"))
